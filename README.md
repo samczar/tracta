@@ -10,4 +10,6 @@ This builds the sass file into css folder in the dist folder.
 
 Run dist file from server or live server.
 
+N.B: Test on modern browser. Might not support old browsers.
+
 Thank you.
