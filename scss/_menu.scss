@@ -1,0 +1,149 @@
+@mixin mobileMenuBtn {
+	.menu-btn {
+		position: absolute;
+		z-index: 3;
+		right: 35px;
+		top: 35px;
+		cursor: pointer;
+		@include easeout();
+
+		.btn-line {
+			width: 28px;
+			height: 3px;
+			margin: 0 0 5px 0;
+			background: white;
+			@include easeout();
+		}
+
+		//Rotate into X with menu lines
+		&.close {
+			transform: rotate(180deg);
+
+			.btn-line {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					translate: (5px, 5px);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					translate: (7px, -6px);
+					margin-top: -15px;
+				}
+			}
+		}
+	}
+}
+
+@mixin mobileMenu {
+	.menu {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		opacity: 0.9;
+		visibility: hidden;
+		z-index: 1;
+
+		&.show {
+			visibility: visible;
+		}
+
+		&-nav {
+			display: flex;
+			flex-flow: column wrap;
+			align-items: center;
+			justify-content: center;
+			float: left;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			color: $light;
+			background-color: darken(#000000, 5);
+			list-style: none;
+			transform: translate3d(0, -100%, 0);
+			@include easeout();
+
+			&.show {
+				//slide in from top
+				transform: translate3d(0, 0, 0);
+			}
+		}
+		.nav-item {
+			transform: translate3d(600px, 0, 0);
+			@include easeout();
+
+			&.show {
+				transform: translate3d(0, 0, 0);
+			}
+
+			&.current > a {
+				color: bisque;
+			}
+		}
+		.nav-link {
+			display: inline-block;
+			position: relative;
+			font-size: 30px;
+			text-transform: capitalize;
+			padding: 1rem 0;
+			font-weight: 300;
+			color: $light;
+			text-decoration: none;
+			@include easeout();
+			cursor: pointer;
+
+			&:hover {
+				color: aqua;
+			}
+		}
+	}
+
+	//delay each nav-item slide by 0.1s
+	@for $x from 1 through 6 {
+		.nav-item:nth-child(#{$x}) {
+			transition-delay: $x * 0.1s;
+		}
+	}
+}
+
+@mixin largeMenu {
+	.menu {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		margin-left: 10rem;
+		margin-right: 6rem;
+		padding: 1rem;
+		width: 80%;
+
+		.menu-nav {
+			display: flex;
+			justify-content: flex-end;
+			margin-left: 2rem;
+			margin-right: 2rem;
+			align-items: center;
+			.nav-item {
+				text-decoration: none;
+				display: flex;
+				flex-direction: row;
+				cursor: pointer;
+				font-size: 2vw;
+				z-index: 1;
+				border-left: 3px solid #000000;
+				padding-left: 0.5rem;
+				padding-top: 2rem;
+				& > a {
+					text-decoration: none;
+					color: #000000;
+				}
+				&.nav-brochure {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+$primary-color: white;
+$light: white;
+$black: black;
+
+@mixin text {
+	font-style: italic;
+}
+
+@mixin easeout {
+	transition: all 0.5s ease-out;
+}
+//Media Query Mixins
+@mixin mediaSm {
+	@media screen and (max-width: 500px) {
+		@content;
+	}
+}
+@mixin mediaMd {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+@mixin mediaLg {
+	@media screen and (min-width: 769px) and (max-width: 1170px) {
+		@content;
+	}
+}
+
+@mixin mediaXl {
+	@media screen and (min-width: 1170px) {
+		@content;
+	}
+}
+
+//For the bonus images
+@keyframes cf3FadeInOut {
+	0% {
+		opacity: 1;
+	}
+	45% {
+		opacity: 1;
+	}
+	55% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateY(-2px);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translateY(2px);
+	}
+}
+
+@mixin largeScreenHeadingText {
+	.heading {
+		margin-left: 4rem;
+		margin-top: 4.5rem;
+
+		.large-heading {
+			margin-bottom: 2rem;
+			margin-top: 2rem;
+		}
+		.small-heading {
+			background-color: $black;
+			font-size: 2.5rem;
+			color: $light;
+			text-align: center;
+			padding: 0.4rem;
+		}
+	}
+}

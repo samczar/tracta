@@ -1,0 +1,94 @@
+//Widescreens
+@include mediaXl {
+	@include largeMenu;
+	@include largeScreenHeadingText;
+	.home {
+		min-height: 97%;
+	}
+	.heading {
+		max-width: 15rem;
+
+		.large-heading {
+			font-size: 5rem;
+		}
+		.small-heading {
+			width: 12rem;
+		}
+	}
+}
+
+//Desktops & Laptops
+@include mediaLg {
+	@include largeMenu;
+	@include largeScreenHeadingText;
+	.home {
+		min-height: 97%;
+	}
+	.heading {
+		max-width: 12rem;
+
+		.large-heading {
+			font-size: 4rem;
+		}
+		.small-heading {
+			width: 10rem;
+		}
+	}
+}
+
+//Tablets and Small Laptop
+@include mediaMd {
+	@include mobileMenuBtn;
+	@include mobileMenu;
+	.home {
+		min-height: 100%;
+	}
+	.brochure {
+		display: none;
+	}
+	.heading {
+		margin-left: 1rem;
+
+		.large-heading {
+			margin-bottom: 2rem;
+			margin-top: 5rem;
+			font-size: 4rem;
+			max-width: 16rem;
+		}
+		.small-heading {
+			font-size: 6vh;
+			color: $light;
+			background-color: $black;
+			width: 10rem;
+		}
+	}
+}
+
+//Smartphones
+@include mediaSm {
+	@include mobileMenuBtn;
+	@include mobileMenu;
+	.home {
+		min-height: 100%;
+	}
+	.brochure {
+		display: none;
+	}
+	.heading {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-top: 9rem;
+		min-height: 200px;
+		align-items: center;
+
+		.large-heading {
+			margin-top: 1rem;
+			font-size: 11vh;
+			color: $light;
+		}
+		.small-heading {
+			font-size: 6vh;
+		}
+	}
+}

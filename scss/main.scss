@@ -1,0 +1,113 @@
+@import 'config';
+@import 'menu';
+@import 'mobile';
+
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: DSansProCondBold;
+	src: url(../assets/fonts/JDSansPro-Condensed/JDSansPro-CondBold.woff);
+	src: url(../assets/fonts/JDSansPro-Condensed/JDSansPro-CondBold.woff2);
+}
+body,
+html {
+	height: 100%;
+	line-height: 0.8;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+	font-weight: 700;
+}
+body {
+	background-color: $primary-color;
+	overflow: hidden;
+
+	.home {
+		background-image: url('../assets/images/hero.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 100vw;
+		position: absolute;
+		background-position: center;
+		font-family: DSansProCondBold;
+		animation: 1s shake 2 forwards;
+		animation-delay: 1s;
+
+		.heading {
+			.small-heading {
+				font-style: italic;
+			}
+		}
+
+		.nav-foot {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: rgba(255, 228, 196, 0.5);
+			width: 100%;
+			padding-top: 2rem;
+			padding-bottom: 1rem;
+
+			img {
+				animation-name: cf3FadeInOut;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: infinite;
+				animation-duration: 5s;
+				animation-direction: alternate;
+				height: 87px;
+				width: 100px;
+				position: relative;
+				&.top {
+					margin-left: 5rem;
+					animation-delay: 5s;
+					opacity: 0;
+				}
+				&.bottom {
+					margin-left: -6rem;
+				}
+			}
+		}
+	}
+}
+
+.ml15 .word {
+	display: inline-block;
+}
+
+.ml15 .letter {
+	display: inline-block;
+}
+.large-nav {
+	position: absolute;
+	margin-right: 5rem;
+	bottom: 0;
+	display: inline;
+}
+.brochure {
+	font-family: DSansProCondBold;
+	background-color: $light;
+	margin-bottom: 0;
+	text-align: right;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.headerDivider {
+	border-left: 1px solid #696e74;
+	border-right: 1px solid #696e74;
+	height: 32px;
+	position: absolute;
+	right: 142px;
+	top: 0px;
+}
